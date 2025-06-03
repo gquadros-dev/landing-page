@@ -4,7 +4,7 @@
 REMOTE_USER="root"
 REMOTE_HOST="170.81.43.124" # Substitua pelo IP do seu servidor
 REMOTE_PORT="2214"          # Substitua pela porta SSH correta
-PROJECT_DIR="projetos"
+PROJECT_DIR="projetos/my-landing-page"
 DOCKER_IMAGE_NAME="my-landing-page"
 DOCKER_CONTAINER_NAME="myLandingPage"
 
