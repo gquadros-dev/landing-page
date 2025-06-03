@@ -1,7 +1,7 @@
 <?php
   if (isset($_GET['content'])) {
     $page = $_GET['content'];
-    $filePath = './src/pages/' . basename($page) . '.php';
+    $filePath = './src/pages/' . basename($page) . '.php';  
 
     if (file_exists($filePath)) {
       include($filePath);

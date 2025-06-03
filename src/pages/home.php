@@ -56,7 +56,7 @@
 </div>
 
 <div id="project-description-container" class="mt-4">
-  <div class="d-none d-md-block mt-4"><p>Selecione um projeto para ver os detalhes.</p></div>
+  <div class="mt-4"><p>Selecione um projeto para ver os detalhes.</p></div>
 </div>
 
 <hr>
