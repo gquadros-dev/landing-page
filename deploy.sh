@@ -4,7 +4,7 @@
 REMOTE_USER="root"
 REMOTE_HOST="170.81.43.124" # Substitua pelo IP do seu servidor
 REMOTE_PORT="2214"          # Substitua pela porta SSH correta
-PROJECT_DIR="/projetos/my-landing-page"
+PROJECT_DIR="projetos"
 DOCKER_IMAGE_NAME="my-landing-page"
 DOCKER_CONTAINER_NAME="myLandingPage"
 
@@ -39,8 +39,8 @@ echo "----------------------------------------------------"
 ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" << EOF
   echo "==> Conectado ao servidor: $REMOTE_HOST"
   echo "==> Navegando para o diretório do projeto: $PROJECT_DIR"
-  ls
   cd $PROJECT_DIR || { echo "Falha ao acessar o diretório $PROJECT_DIR no servidor"; exit 1; }
+  ls
 
   #echo "==> Fazendo pull das últimas alterações do repositório..."
   #git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
