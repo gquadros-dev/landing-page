@@ -62,7 +62,7 @@
 <hr>
 
 <h2 class="title text-center">Tecnologias que domino:</h2>
-<div class="container d-flex justify-content-center gap-3">
+<div class="d-flex justify-content-center flex-wrap gap-3">
   <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png" alt="" width="64" height="64">
   <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/phpstorm.png" alt="" width="64" height="64">
   <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/android_studio.png" alt="" width="64" height="64">
