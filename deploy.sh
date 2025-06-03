@@ -60,14 +60,14 @@ ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" << EOF
 EOF
 
 # Verifica o status de saída do comando SSH
-#SSH_EXIT_STATUS=$?
-#if [ $SSH_EXIT_STATUS -ne 0 ]; then
-#  echo ""
-#  echo "----------------------------------------------------"
-#  echo " ERRO: Ocorreu um problema durante a execução dos comandos no servidor remoto (status de saída SSH: $SSH_EXIT_STATUS)."
-#  echo "----------------------------------------------------"
-#  exit $SSH_EXIT_STATUS
-#fi
+SSH_EXIT_STATUS=$?
+if [ $SSH_EXIT_STATUS -ne 0 ]; then
+  echo ""
+  echo "----------------------------------------------------"
+  echo " ERRO: Ocorreu um problema durante a execução dos comandos no servidor remoto (status de saída SSH: $SSH_EXIT_STATUS)."
+  echo "----------------------------------------------------"
+  exit $SSH_EXIT_STATUS
+fi
 
 echo ""
 echo "----------------------------------------------------"
