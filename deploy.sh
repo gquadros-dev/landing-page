@@ -41,33 +41,33 @@ ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" << EOF
   echo "==> Navegando para o diretório do projeto: $PROJECT_DIR"
   cd "$PROJECT_DIR" || { echo "Falha ao acessar o diretório $PROJECT_DIR no servidor"; exit 1; }
 
-  echo "==> Fazendo pull das últimas alterações do repositório..."
-  git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
+  #echo "==> Fazendo pull das últimas alterações do repositório..."
+  #git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
 
-  echo "==> Parando container Docker existente (se houver)..."
-  docker stop "$DOCKER_CONTAINER_NAME" || echo "Nota: Container $DOCKER_CONTAINER_NAME não estava rodando ou não existe."
+  #echo "==> Parando container Docker existente (se houver)..."
+  #docker stop "$DOCKER_CONTAINER_NAME" || echo "Nota: Container $DOCKER_CONTAINER_NAME não estava rodando ou não existe."
 
-  echo "==> Removendo container Docker existente (se houver)..."
-  docker rm "$DOCKER_CONTAINER_NAME" || echo "Nota: Container $DOCKER_CONTAINER_NAME não existia."
+  #echo "==> Removendo container Docker existente (se houver)..."
+  #docker rm "$DOCKER_CONTAINER_NAME" || echo "Nota: Container $DOCKER_CONTAINER_NAME não existia."
 
-  echo "==> Construindo nova imagem Docker: $DOCKER_IMAGE_NAME..."
-  docker build -t "$DOCKER_IMAGE_NAME" . || { echo "Falha ao construir a imagem Docker no servidor"; exit 1; }
+  #echo "==> Construindo nova imagem Docker: $DOCKER_IMAGE_NAME..."
+  #docker build -t "$DOCKER_IMAGE_NAME" . || { echo "Falha ao construir a imagem Docker no servidor"; exit 1; }
 
-  echo "==> Iniciando novo container Docker: $DOCKER_CONTAINER_NAME..."
-  docker run -d --name "$DOCKER_CONTAINER_NAME" -p 8080:80 -v ./src:/var/www/html/src "$DOCKER_IMAGE_NAME" || { echo "Falha ao iniciar o container Docker no servidor"; exit 1; }
+  #echo "==> Iniciando novo container Docker: $DOCKER_CONTAINER_NAME..."
+  #docker run -d --name "$DOCKER_CONTAINER_NAME" -p 8080:80 -v ./src:/var/www/html/src "$DOCKER_IMAGE_NAME" || { echo "Falha ao iniciar o container Docker no servidor"; exit 1; }
 
-  echo "==> Deploy no servidor concluído com sucesso!"
+  #echo "==> Deploy no servidor concluído com sucesso!"
 EOF
 
 # Verifica o status de saída do comando SSH
-SSH_EXIT_STATUS=$?
-if [ $SSH_EXIT_STATUS -ne 0 ]; then
-  echo ""
-  echo "----------------------------------------------------"
-  echo " ERRO: Ocorreu um problema durante a execução dos comandos no servidor remoto (status de saída SSH: $SSH_EXIT_STATUS)."
-  echo "----------------------------------------------------"
-  exit $SSH_EXIT_STATUS
-fi
+#SSH_EXIT_STATUS=$?
+#if [ $SSH_EXIT_STATUS -ne 0 ]; then
+#  echo ""
+#  echo "----------------------------------------------------"
+#  echo " ERRO: Ocorreu um problema durante a execução dos comandos no servidor remoto (status de saída SSH: $SSH_EXIT_STATUS)."
+#  echo "----------------------------------------------------"
+#  exit $SSH_EXIT_STATUS
+#fi
 
 echo ""
 echo "----------------------------------------------------"
