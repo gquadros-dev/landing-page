@@ -40,7 +40,7 @@ ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" << EOF
   echo "==> Conectado ao servidor: $REMOTE_HOST"
   echo "==> Navegando para o diretório do projeto: $PROJECT_DIR"
   ls
-  cd "$PROJECT_DIR" || { echo "Falha ao acessar o diretório $PROJECT_DIR no servidor"; exit 1; }
+  cd $PROJECT_DIR || { echo "Falha ao acessar o diretório $PROJECT_DIR no servidor"; exit 1; }
 
   #echo "==> Fazendo pull das últimas alterações do repositório..."
   #git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
