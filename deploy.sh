@@ -40,10 +40,9 @@ ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_HOST" << EOF
   echo "==> Conectado ao servidor: $REMOTE_HOST"
   echo "==> Navegando para o diretório do projeto: $PROJECT_DIR"
   cd $PROJECT_DIR || { echo "Falha ao acessar o diretório $PROJECT_DIR no servidor"; exit 1; }
-  ls
 
-  #echo "==> Fazendo pull das últimas alterações do repositório..."
-  #git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
+  echo "==> Fazendo pull das últimas alterações do repositório..."
+  git pull origin main || { echo "Falha no git pull no servidor"; exit 1; }
 
   #echo "==> Parando container Docker existente (se houver)..."
   #docker stop "$DOCKER_CONTAINER_NAME" || echo "Nota: Container $DOCKER_CONTAINER_NAME não estava rodando ou não existe."
