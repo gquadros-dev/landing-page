@@ -1,0 +1,13 @@
+.pointer:hover {
+  cursor: pointer;
+}
+
+#main-container {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.title {
+  margin-bottom: 10px;
+  font-weight: semibold;
+}
