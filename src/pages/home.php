@@ -24,14 +24,25 @@
 
 <div id="carouselExample" class="carousel slide">
   <div class="carousel-inner">
-    <a class="carousel-item active" href="https://github.com/gquadros-dev/whatsapp-api" target="_blank">
-      <img src="../../imgs/projetos/projeto-api-whats.png" class="d-block w-100">
-    </a>
-    <a class="carousel-item" href="https://github.com/gquadros-dev/polls" target="_blank">
-      <img src="../../imgs/projetos/projeto-polls.png" class="d-block w-100">
-    </a>
-    <div class="carousel-item">
-      <img src="../../imgs/logo-gquadros.png" class="d-block w-100" height="500">
+    <div class="carousel-item active" data-project-id="whatsapp-api">
+      <a href="https://github.com/gquadros-dev/whatsapp-api" target="_blank">
+        <img src="../../imgs/projetos/projeto-api-whats.png" class="d-block w-100" alt="Projeto API para WhatsApp">
+      </a>
+    </div>
+    <div class="carousel-item" data-project-id="polls">
+      <a href="https://github.com/gquadros-dev/polls" target="_blank">
+        <img src="../../imgs/projetos/projeto-polls.png" class="d-block w-100" alt="Projeto Polls">
+      </a>
+    </div>
+    <div class="carousel-item" data-project-id="abex">
+      <a href="https://github.com/gquadros-dev/abex" target="_blank">
+        <img src="../../imgs/projetos/projeto-abex.png" class="d-block w-100" alt="Projeto ABEX Brechó Online">
+      </a>
+    </div>
+    <div class="carousel-item" data-project-id="landing-page">
+      <a href="https://github.com/gquadros-dev/landing-page" target="_blank">
+        <img src="../../imgs/projetos/projeto-landing-page.png" class="d-block w-100" alt="Projeto Landing Page">
+      </a>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -43,3 +54,64 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+<div id="project-description-container" class="mt-4">
+  <div class="d-none d-md-block mt-4"><p>Selecione um projeto para ver os detalhes.</p></div>
+</div>
+
+<hr>
+
+<h2 class="title text-center">Tecnologias que domino:</h2>
+<div class="w-100 d-flex justify-content-center gap-3">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/visual_studio_code.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/phpstorm.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/android_studio.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/php_(elephpant).png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/laravel.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/typescript.png" alt="" width="64" height="64">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/bootstrap.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/tailwind_css.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postgresql.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/redis.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/mongodb.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="" width="64" height="64">
+  <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/nginx.png" alt="" width="64" height="64">
+</div>
+
+<hr>
+
+<h2 class="title text-center">Onde me encontrar:</h2>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const carouselElement = document.getElementById('carouselExample');
+    const descriptionContainerTargetId = 'project-description-container';
+
+    if (carouselElement && document.getElementById(descriptionContainerTargetId)) {
+      function loadDescriptionForSlide(slideElement) {
+        if (!slideElement) return;
+        const projectId = slideElement.getAttribute('data-project-id');
+        if (projectId) {
+          htmx.ajax('GET', `/src/responses/get-project-description.php?id=${projectId}`, {
+            target: `#${descriptionContainerTargetId}`,
+            swap: 'innerHTML'
+          });
+        }
+      }
+
+      const activeItem = carouselElement.querySelector('.carousel-item.active');
+      if (activeItem) {
+        loadDescriptionForSlide(activeItem);
+      }
+
+      carouselElement.addEventListener('slid.bs.carousel', function (event) {
+        if (event.relatedTarget) {
+          loadDescriptionForSlide(event.relatedTarget);
+        }
+      });
+    }
+  });
+</script>
