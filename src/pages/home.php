@@ -5,20 +5,17 @@
 <h2 class="title">Gabriel Quadros</h2>
 
 <div>
-  Olá, me chamo Gabriel, tenho <?php echo date('Y') - 2005 ?> anos e sou estudante de Ciência da Computação na Universidade Comunitária de Chapecó (Unochapecó).
-  <br>
-  Atualmente, estou trabalhando como desenvolvedor Delphi, mas também tenho experiência com PHP e JavaScript.
-  <br><br>
-  Desde pequeno eu sempre fui muito curioso, então quando ganhei meu primeiro video game (um playstation 2), surgiram duas paixões:
-  <ul>
-    <li>Jogos</li>
-    <li>Inglês</li>
-  </ul>
-  Depois de um tempo eu ganhei meu primeiro notebook e a primeira coisa que fiz foi instalar a Unity, para desenvolver um jogo.
-  Mas não deu muito tempo o notebook parou de funcionar :(
-  <br><br>
-  Com o tempo eu fui aprendendo inglês e também foi crescendo essa minha curiosidade sobre "como jogos são feitos", assim, eu caí no canal do "Curso em vídeo",
-  onde dei meus primeiros passos na programação.
+  <div>
+    <p>Olá, me chamo Gabriel, tenho <?php echo date('Y') - 2005 ?> anos e sou estudante de Ciência da Computação na Universidade Comunitária de Chapecó (Unochapecó).</p>
+    <p>Atualmente, estou trabalhando como desenvolvedor Delphi, mas também tenho experiência com PHP e JavaScript.</p>
+    <p>Desde pequeno eu sempre fui muito curioso, então quando ganhei meu primeiro video game (um playstation 2), surgiram duas paixões:</p>
+    <ul>
+      <li>Jogos</li>
+      <li>Inglês</li>
+    </ul>
+    <p>Depois de um tempo eu ganhei meu primeiro notebook e a primeira coisa que fiz foi instalar a Unity, para desenvolver um jogo. Mas não deu muito tempo o notebook parou de funcionar :(</p>
+    <p>Com o tempo eu fui aprendendo inglês e também foi crescendo essa minha curiosidade sobre "como jogos são feitos", assim, eu caí no canal do "Curso em vídeo", onde dei meus primeiros passos na programação.</p>
+  </div>
 </div>
 
 <hr>
