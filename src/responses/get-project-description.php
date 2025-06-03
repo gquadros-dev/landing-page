@@ -49,10 +49,8 @@ $projects = [
 $projectId = $_GET['id'] ?? null;
 
 if ($projectId && isset($projects[$projectId])) {
-    echo '<div class="d-none d-md-block mt-4">';
-    echo $projects[$projectId]['html_content'];
-    echo '</div>';
+  echo $projects[$projectId]['html_content'];
 } else {
-    echo '<div class="d-none d-md-block mt-4"><p>Descrição não encontrada ou projeto inválido.</p></div>';
+  echo '<p>Descrição não encontrada ou projeto inválido.</p>';
 }
 ?>
