@@ -2,7 +2,7 @@
   $pageTitle = "Home";
 ?>
 
-<h2 class="title">Gabriel Quadros</h2>
+<h2 class="title">Gabriel Fernando de Quadros</h2>
 
 <div>
   <div>
