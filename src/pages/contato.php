@@ -1,5 +1,5 @@
-<?php
-  $pageTitle = "Contato";
-?>
+<h2 class="title">Entre em Contato</h2>
 
-<h2>Entre em Contato</h2>
+<div>
+  
+</div>

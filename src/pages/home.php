@@ -1,8 +1,4 @@
-<?php
-  $pageTitle = "Home";
-?>
-
-<h2 class="title">Gabriel Fernando de Quadros</h2>
+<h2 class="title">Gabriel Quadros</h2>
 
 <div>
   <div>
@@ -78,12 +74,6 @@
   <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/docker.png" alt="" width="64" height="64">
   <img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/nginx.png" alt="" width="64" height="64">
 </div>
-
-<hr>
-
-<h2 class="title text-center">Onde me encontrar:</h2>
-
-
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
