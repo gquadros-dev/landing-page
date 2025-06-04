@@ -4,6 +4,7 @@ $projects = [
         'title' => 'API para WhatsApp',
         'html_content' => '
             <h5>API para WhatsApp</h5>
+            <p><strong>Link:</strong> <a href="https://whatsapp.gquadros.com/docs" target="_blank">whatsapp.gquadros.com</a></p>
             <p>Esta API serve como um gateway para enviar mensagens via WhatsApp, utilizando a biblioteca whatsapp-web.js.</p>
             <p>Ela é construída com Express.js e gerencia o envio de mensagens através de filas (Bull + Redis) organizadas por CNPJ da empresa.</p>
             <p>Além disso, utiliza MongoDB para armazenar métricas de envio e logs de erro.</p>
