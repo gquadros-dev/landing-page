@@ -22,7 +22,7 @@
   <div class="carousel-inner">
     <div class="carousel-item active" data-project-id="whatsapp-api">
       <a href="https://github.com/gquadros-dev/whatsapp-api" target="_blank">
-        <img src="../../imgs/projetos/projeto-api-whats.png" class="d-block w-100" alt="Projeto API para WhatsApp">
+        <img src="https://drive.google.com/file/d/1U1gENpcsmAFXttb1OZfqkwC6mxqd2y18/view" class="d-block w-100" alt="Projeto API para WhatsApp">
       </a>
     </div>
     <div class="carousel-item" data-project-id="polls">
