@@ -3,6 +3,5 @@
 Dockerfile
 .dockerignore
 vendor/
-.env
 deploy-dev.sh
 deploy.sh

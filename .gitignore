@@ -1,2 +1,5 @@
 deploy.sh
 deploy-dev.sh
+composer.phar
+.env
+/vendor/
