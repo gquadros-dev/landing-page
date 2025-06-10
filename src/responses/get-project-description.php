@@ -4,7 +4,7 @@ $projects = [
         'title' => 'API para WhatsApp',
         'html_content' => '
             <h5>API para WhatsApp</h5>
-            <p><strong>Link:</strong> <a href="https://whatsapp.gquadros.com/docs" target="_blank">whatsapp.gquadros.com</a></p>
+            <p><strong>Link da doc:</strong> <a href="https://whatsapp.gquadros.com/docs" target="_blank">whatsapp.gquadros.com</a></p>
             <p>Esta API serve como um gateway para enviar mensagens via WhatsApp, utilizando a biblioteca whatsapp-web.js.</p>
             <p>Ela é construída com Express.js e gerencia o envio de mensagens através de filas (Bull + Redis) organizadas por CNPJ da empresa.</p>
             <p>Além disso, utiliza MongoDB para armazenar métricas de envio e logs de erro.</p>
@@ -20,6 +20,7 @@ $projects = [
     'polls' => [
         'title' => 'Projeto Polls',
         'html_content' => '
+            <a hx-get="/index.php?content=polls" hx-target="#main-container" hx-swap="innerHTML">Link</a>
             <h5>Projeto Polls</h5>
             <p>O projeto Polls (enquetes) foi desenvolvido na imersão NLW 2024, da RocketSeat, e foi lá onde conheci novas tecnologias como o RedisDB e WebSocket.</p>
             <p>Depois desse projeto meu interesse por novas tecnologias cresceu, também criei outros projetos com RedisDB por conta desse projeto.</p>',

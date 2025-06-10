@@ -76,32 +76,47 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const carouselElement = document.getElementById('carouselExample');
-    const descriptionContainerTargetId = 'project-description-container';
+(function() {
+  const carouselElement = document.getElementById('carouselExample');
+  const descriptionContainerTargetId = 'project-description-container';
+  const descriptionContainerElement = document.getElementById(descriptionContainerTargetId);
 
-    if (carouselElement && document.getElementById(descriptionContainerTargetId)) {
-      function loadDescriptionForSlide(slideElement) {
-        if (!slideElement) return;
-        const projectId = slideElement.getAttribute('data-project-id');
-        if (projectId) {
-          htmx.ajax('GET', `/src/responses/get-project-description.php?id=${projectId}`, {
-            target: `#${descriptionContainerTargetId}`,
-            swap: 'innerHTML'
-          });
-        }
-      }
-
-      const activeItem = carouselElement.querySelector('.carousel-item.active');
-      if (activeItem) {
-        loadDescriptionForSlide(activeItem);
-      }
-
-      carouselElement.addEventListener('slid.bs.carousel', function (event) {
-        if (event.relatedTarget) {
-          loadDescriptionForSlide(event.relatedTarget);
-        }
-      });
+  function handleCarouselSlide(event) {
+    if (event.relatedTarget) {
+      loadDescriptionForSlide(event.relatedTarget);
     }
-  });
+  }
+
+  if (carouselElement && descriptionContainerElement) {
+    function loadDescriptionForSlide(slideElement) {
+      if (!slideElement) return;
+      const projectId = slideElement.getAttribute('data-project-id');
+      if (projectId && window.htmx) {
+        htmx.ajax('GET', `/src/responses/get-project-description.php?id=${projectId}`, {
+          target: `#${descriptionContainerTargetId}`,
+          swap: 'innerHTML'
+        });
+      } else if (!window.htmx) {
+        console.error('HTMX não está definido.');
+      }
+    }
+
+    const activeItem = carouselElement.querySelector('.carousel-item.active');
+    if (activeItem) {
+      loadDescriptionForSlide(activeItem);
+    } else {
+      console.warn('Nenhum item ativo encontrado no carrossel ao inicializar em home.php.');
+    }
+
+    carouselElement.removeEventListener('slid.bs.carousel', handleCarouselSlide);
+    carouselElement.addEventListener('slid.bs.carousel', handleCarouselSlide);
+  } else {
+    if (!carouselElement) {
+      console.error('Elemento do carrossel #carouselExample não encontrado em home.php.');
+    }
+    if (!descriptionContainerElement) {
+      console.error('Elemento container da descrição #project-description-container não encontrado em home.php.');
+    }
+  }
+})();
 </script>
